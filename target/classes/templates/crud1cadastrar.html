@@ -7,10 +7,12 @@
 
 <!-- Bootstrap CSS -->
 <link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
 
-<title>Configurações</title>
+<title>CRUD1</title>
 </head>
 <body class="d-flex flex-column h-100">
 
@@ -19,16 +21,22 @@
 		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="/">RDC</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+					aria-controls="navbarCollapse" aria-expanded="false"
+					aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<ul class="navbar-nav me-auto mb-2 mb-md-0">
-						<li class="nav-item"><a class="nav-link" href="/">Menu</a></li>
-						<li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="/">Menu</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="/logout">Logout</a></li>
 					</ul>
 					<form class="d-flex">
-						<input class="form-control me-2" type="search" placeholder="..." aria-label="Buscar">
+						<input class="form-control me-2" type="search" placeholder="..."
+							aria-label="Buscar">
 						<button class="btn btn-outline-success" type="submit">Buscar</button>
 					</form>
 				</div>
@@ -37,23 +45,37 @@
 	</header>
 
 
-	<div class="container my-2">
-		<h1>Configurações</h1>
+	<!-- Begin page content -->
+	<br />
+	<main class="flex-shrink-0">
+		<div class="container">
+			<h1 class="mt-5">CRUD 1</h1>
+		</div>
+	</main>
 
-		<form action="#" th:action="@{/Config/salvar/}" th:object="${config}" method="post">
+
+
+	<div class="container my-2">
+		<h1>Cadastrar Analista</h1>
+
+		<form action="#" th:action="@{/Analista/cadastrar}" th:object="${analista}" method="post">
 			<div class="mb-3">
-				<label for="configuracao1" class="form-label">Configuração 1</label> 
-				<input type="text"  th:field="*{configuracao1}" class="form-control" id="configuracao1" name="configuracao1" aria-describedby="configuracao1" />
+				<label for="id" class="form-label">Id</label> 
+				<input type="text"  class="form-control" id="id" name="id" aria-describedby="id" />
 			</div>
 			<div class="mb-3">
-				<label for="configuracao2" class="form-label">Configuração 2</label> 
-				<input type="text"  th:field="*{configuracao2}" class="form-control" id="configuracao2" name="configuracao2" aria-describedby="configuracao2" />
+				<label for="nome" class="form-label">Nome</label> 
+				<input type="text"  class="form-control" id="nome" name="nome" aria-describedby="nome" />
 			</div>
 			<div class="mb-3">
-				<label for="configuracao3" class="form-label">Configuração 3</label>
-				<input type="text"  th:field="*{configuracao3}" class="form-control" id="configuracao3" name="configuracao3" aria-describedby="configuracao3">
+				<label for="sobrenome" class="form-label">Sobrenome</label>
+				<input type="text"  class="form-control" id="sobrenome" name="sobrenome" aria-describedby="sobrenome">
 			</div>
-			<button type="submit" class="btn btn-primary">Salvar Configurações</button>
+			<div class="mb-3">
+				<label for="email" class="form-label">Email</label> 
+				<input type="text"  class="form-control" id="email" name="email" aria-describedby="email" />
+			</div>
+			<button type="submit" class="btn btn-primary">Cadastrar</button>
 		</form>
 	</div>
 
